@@ -1,7 +1,6 @@
 {
   "name": "node-2021",
   "version": "1.0.0",
-  "private": true,
   "description": "Simple REST API",
   "repository": "https://github.com/Thoughtscript/node-2021",
   "main": "main.js",
