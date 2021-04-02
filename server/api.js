@@ -36,7 +36,7 @@ publicApi
         
       } catch (ex) {
         return resolve(
-          res.send({ status: 200, data: 'Exception encountered!' })
+          res.send({ status: 400, data: 'Exception encountered!' })
         )
       }
     })
@@ -54,7 +54,7 @@ publicApi
 
       } catch (ex) {
         return resolve(
-          res.send({ status: 200, data: 'Exception encountered!' })
+          res.send({ status: 400, data: 'Exception encountered!' })
         )
       }
     })
@@ -73,11 +73,11 @@ publicApi
 
         B.WRITE(`${path}/${uuid}`, blob).then(() =>
           resolve(res.send({ status: 201, oid: uuid, size: blob.length }))
-        ), () =>resolve(res.send({ status: 200, data: 'Exception encountered!' }))
+        ), () =>resolve(res.send({ status: 400, data: 'Exception encountered!' }))
 
       } catch (ex) {
         return resolve(
-          res.send({ status: 200, data: 'Exception encountered!' })
+          res.send({ status: 400, data: 'Exception encountered!' })
         )
       }
     })
