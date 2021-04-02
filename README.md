@@ -29,10 +29,10 @@ npm run tests
 
 You will see:
 ```cmd
-GET /data/cats/ 404 0.510 ms - 149
-PUT /data/cats 200 2.144 ms - 69
-GET /data/cats/7b98067b-3056-4037-8cf7-d3ff1581ce96 200 1.711 ms - 45
-DELETE /data/cats/7b98067b-3056-4037-8cf7-d3ff1581ce96 200 0.997 ms - 14
+GET /data/cats/ 404 4.267 ms - 149
+PUT /data/cats 201 20.348 ms - 69
+GET /data/cats/c922e669-c677-4bb3-aa8d-52d78dbcb0c7 200 3.600 ms - 45
+DELETE /data/cats/c922e669-c677-4bb3-aa8d-52d78dbcb0c7 200 1.378 ms - 14
 ```
 
 ```cmd
@@ -53,17 +53,17 @@ STATUS: 404
 
 ======= PUT request made to http:localhost:7777/data/cats
 
-STATUS: 200
+STATUS: 201
 
-{"status":201,"oid":"7b98067b-3056-4037-8cf7-d3ff1581ce96","size":17}
+{"status":201,"oid":"c922e669-c677-4bb3-aa8d-52d78dbcb0c7","size":17}
 
-======= GET request made to http:localhost:7777/data/cats/7b98067b-3056-4037-8cf7-d3ff1581ce96
+======= GET request made to http:localhost:7777/data/cats/c922e669-c677-4bb3-aa8d-52d78dbcb0c7
 
 STATUS: 200
 
 {"status":200,"data":"{\"name\":\"hello!\"}"}
 
-======= DELETE request made to http:localhost:7777/data/cats/7b98067b-3056-4037-8cf7-d3ff1581ce96
+======= DELETE request made to http:localhost:7777/data/cats/c922e669-c677-4bb3-aa8d-52d78dbcb0c7
 
 STATUS: 200
 

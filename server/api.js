@@ -30,13 +30,13 @@ publicApi
         B.READ(path).then(
           data => {
             let responseData = data.toString('utf8')
-            return resolve(res.send({ status: 200, data: responseData }))
-          }, () => resolve(res.send({ status: 404, data: `404 Not Found!` }))
+            return resolve(res.status(200).send({ status: 200, data: responseData }))
+          }, () => resolve(res.status(404).send({ status: 404, data: `404 Not Found!` }))
         )
         
       } catch (ex) {
         return resolve(
-          res.send({ status: 400, data: 'Exception encountered!' })
+          res.status(400).send({ status: 400, data: 'Exception encountered!' })
         )
       }
     })
@@ -50,11 +50,11 @@ publicApi
           path = `${C.DATA.DIR}/${repository}/${objectID}`
 
         B.DELETE(path)
-        return resolve(res.send({ status: 200 }))
+        return resolve(res.status(200).send({ status: 200 }))
 
       } catch (ex) {
         return resolve(
-          res.send({ status: 400, data: 'Exception encountered!' })
+          res.status(400).send({ status: 400, data: 'Exception encountered!' })
         )
       }
     })
@@ -72,12 +72,12 @@ publicApi
         if (!B.CHECK_DIR(path)) B.MKDIR(path)
 
         B.WRITE(`${path}/${uuid}`, blob).then(() =>
-          resolve(res.send({ status: 201, oid: uuid, size: blob.length }))
-        ), () =>resolve(res.send({ status: 400, data: 'Exception encountered!' }))
+          resolve(res.status(201).send({ status: 201, oid: uuid, size: blob.length }))
+        ), () =>resolve(res.status(400).send({ status: 400, data: 'Exception encountered!' }))
 
       } catch (ex) {
         return resolve(
-          res.send({ status: 400, data: 'Exception encountered!' })
+          res.status(400).send({ status: 400, data: 'Exception encountered!' })
         )
       }
     })
